@@ -1,3 +1,5 @@
+var bcrypt = require('bcrypt-nodejs');
+
 module.exports = function(Schema, models, validate, mongoose) {
 	// Users
 	var usersSchema = new Schema({
@@ -38,5 +40,17 @@ module.exports = function(Schema, models, validate, mongoose) {
 			default: Date.now
 		}
 	});
+
+	// generating a hash
+	usersSchema.methods.generateHash = function(password) {
+	    return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+	};
+
+	// checking if password is valid
+	usersSchema.methods.validPassword = function(password) {
+	    return bcrypt.compareSync(password, this.password);
+	};
+
+
 	return mongoose.model('User', usersSchema);
 };

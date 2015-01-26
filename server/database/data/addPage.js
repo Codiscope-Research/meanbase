@@ -9,7 +9,7 @@ module.exports = function(Schema, models, mongoose) {
 		content: {'content-1': 'Meanbase is a CMS built on the MEAN stack and made to be simple and intuitive for users and developers.'},
 		description: 'A demo home page created automatically in meanbase.',
 		summary: 'A demo home page created automatically in meanbase.',
-		published: true,
+		published: true
 	});
 
 	// mongoose.model('Page').find({}, function(error, found) {

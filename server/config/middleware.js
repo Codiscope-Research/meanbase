@@ -6,9 +6,7 @@ var express = require('express'),
 	bodyParser = require('body-parser'),
 	multer  = require('multer'),
 	logger = require('morgan'),
-	cookieParser = require('cookie-parser'),
-	session = require('express-session'),
-	passport = require('passport');
+	cookieParser = require('cookie-parser');
 
 module.exports = function(app) {
 	var clientPath = './client/';
@@ -20,7 +18,6 @@ module.exports = function(app) {
 	app.set('view engine', 'jade');
 	app.use(logger('dev'));
 	app.use(cookieParser());
-	app.use(bodyParser());
 	app.use(bodyParser.urlencoded({ extended: false }));
 	app.use(bodyParser.json());
 	app.use(multer({ 
@@ -30,9 +27,6 @@ module.exports = function(app) {
 		}
 	}));
 	app.use(prerender);
-	app.use(session({secret: 'Yellow or*&ange bRown_189'}));
-	app.use(passport.initialize());
-	app.use(passport.session());
 	// app.use(stylus.middleware({
 	// 	src: viewsPath,
 	// 	compile: compile
