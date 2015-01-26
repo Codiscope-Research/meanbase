@@ -6,7 +6,8 @@ A CMS built on the MEAN stack. Mongodb, Express, Angular, Node. Uses CKEdit for 
 Watch a demo at 
 <a href="http://youtu.be/tteztXru4eA">http://youtu.be/tteztXru4eA</a>
 
-Makes sure to run "npm install" in your terminal or "sudo npm install" if needed. 
+Makes sure to run "npm install" in your terminal or "sudo npm install" if needed. Also if you are using nodemon
+"npm install nodemon -g", then just run it from the root folder instead of cd'ing into the server folder, otherwise the jade paths won't work.
 
 MongoDB must also be running in the background. If mongodb is installed on your machine open a new terminal window and type, "mongod".
 
